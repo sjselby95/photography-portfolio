@@ -152,6 +152,46 @@
       color: var(--accent);
     }
 
+    /* ── Filmstrip ── */
+    .filmstrip-section {
+      padding: 2.5rem 0 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .filmstrip-section .section-label {
+      padding: 0 2rem;
+    }
+
+    .filmstrip {
+      display: flex;
+      gap: 3px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding-bottom: 3px;
+      min-height: 180px;
+      align-items: center;
+    }
+
+    .filmstrip::-webkit-scrollbar { display: none; }
+
+    .filmstrip-item {
+      flex: 0 0 auto;
+      height: 180px;
+      display: block;
+      overflow: hidden;
+    }
+
+    .filmstrip-item img {
+      height: 100%;
+      width: auto;
+      display: block;
+      object-fit: cover;
+      transition: opacity 0.2s;
+    }
+
+    .filmstrip-item:hover img { opacity: 0.85; }
+
     /* ── Footer ── */
     footer {
       text-align: center;
@@ -181,6 +221,24 @@
 
   <section class="hero">
     <p>Aviation, celestial events, and the night sky — a photography journal.</p>
+  </section>
+
+  <!-- ── Filmstrip ── -->
+  <section class="filmstrip-section">
+    <p class="section-label">Showcase</p>
+    <div class="filmstrip">
+
+      <!-- Add photos below. Copy and paste a new <a> block for each photo.
+           Replace PHOTO_URL with a live.staticflickr.com image URL
+           and FLICKR_PAGE_URL with the link to that photo on Flickr. -->
+
+      <!-- Example (uncomment and fill in to use):
+      <a class="filmstrip-item" href="FLICKR_PAGE_URL" target="_blank" rel="noopener">
+        <img src="PHOTO_URL" alt="">
+      </a>
+      -->
+
+    </div>
   </section>
 
   <main>
