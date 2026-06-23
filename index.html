@@ -1,47 +1,276 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Steven Selby Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steven Selby — Photography</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0d0d;
+      --surface: #181818;
+      --border: #2a2a2a;
+      --text: #e8e8e8;
+      --muted: #888;
+      --accent: #c8a96e;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Georgia', serif;
+      line-height: 1.6;
+    }
+
+    /* ── Header ── */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 3rem;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(13,13,13,0.92);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+
+    header h1 {
+      font-size: 1.3rem;
+      font-weight: normal;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    header h1 span {
+      color: var(--accent);
+    }
+
+    header a.flickr-link {
+      font-family: sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      padding: 0.4rem 1rem;
+      border-radius: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    header a.flickr-link:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem 4rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto;
+      font-family: sans-serif;
+      font-weight: 300;
+    }
+
+    /* ── Albums grid ── */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem 6rem;
+    }
+
+    .section-label {
+      font-family: sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2.5rem;
+    }
+
+    .albums {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .album-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .album-card:hover {
+      border-color: #444;
+    }
+
+    .album-embed {
+      width: 100%;
+      aspect-ratio: 4/3;
+      display: block;
+      border: none;
+    }
+
+    .album-info {
+      padding: 1rem 1.2rem 1.1rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .album-info h2 {
+      font-size: 0.95rem;
+      font-weight: normal;
+      color: var(--text);
+    }
+
+    .album-info a {
+      font-family: sans-serif;
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+
+    .album-info a:hover {
+      color: var(--accent);
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-family: sans-serif;
+      font-size: 0.75rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      header { padding: 1rem 1.2rem; }
+      .albums { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-    <h1><b>Steven Selby</b></h1>
-    <p>
-        Former truck driver turned IT/CyberSecurity Professional
-    </p>
 
-    <h2>About</h2>
-    <p>
-        Spent 9 years as a truck driver, driving across the country, 
-        locally, and everything in between. Now pursuing a path into 
-        IT and CyberSecurity. Starting with my A+ Certification and 
-        ending up with a Bachelor's of Science in Cybersecurity & 
-        Information Assurance
-    </p>
+  <header>
+    <h1>Steven <span>Selby</span></h1>
+    <a class="flickr-link" href="https://www.flickr.com/photos/192044761@N05/" target="_blank" rel="noopener">
+      View on Flickr ↗
+    </a>
+  </header>
 
-    <h2>Certifications</h2>
-    <ul>
-        <li>IBM IT Support Professional</li>
-        <!--CompTIA A+ Coming June 2026 -->
-    </ul>
+  <section class="hero">
+    <p>Aviation, celestial events, and the night sky — a photography journal.</p>
+  </section>
 
-    <h2>Projects</h2>
-    <ul>
-        <li>None yet, check back soon!</li>
-    </ul>
+  <main>
+    <p class="section-label">Albums</p>
 
-    <h2>Labs</h2>
-    <ul>
-        <li>WireShark Packet Capture Analysis</li>
-        <!--In progress-->
-    </ul>
+    <div class="albums">
 
-    <h2>Contact</h2>
-    <ul>
-        <li><a href="https://github.com/sjselby95">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/sjselby95">LinkedIn</a></li>
-    </ul>
+      <!-- Plane Spotting -->
+      <div class="album-card">
+        <a data-flickr-embed="true" data-footer="false" data-header="false"
+           href="https://www.flickr.com/photos/192044761@N05/albums/72177720333681995"
+           title="Plane Spotting">
+          <img src="https://live.staticflickr.com/65535/55274087806_b36d433e25_h.jpg"
+               class="album-embed" alt="Plane Spotting">
+        </a>
+        <div class="album-info">
+          <h2>Plane Spotting</h2>
+          <a href="https://www.flickr.com/photos/192044761@N05/albums/72177720333681995"
+             target="_blank" rel="noopener">Open album ↗</a>
+        </div>
+      </div>
+
+      <!-- April 8th 2024 Total Solar Eclipse -->
+      <div class="album-card">
+        <a data-flickr-embed="true" data-footer="false" data-header="false"
+           href="https://www.flickr.com/photos/192044761@N05/albums/72177720333688623"
+           title="April 8th 2024 Total Solar Eclipse">
+          <img src="https://live.staticflickr.com/65535/55273103628_1073ae1f0f_z.jpg"
+               class="album-embed" alt="April 8th 2024 Total Solar Eclipse">
+        </a>
+        <div class="album-info">
+          <h2>April 8th 2024 Total Solar Eclipse</h2>
+          <a href="https://www.flickr.com/photos/192044761@N05/albums/72177720333688623"
+             target="_blank" rel="noopener">Open album ↗</a>
+        </div>
+      </div>
+
+      <!-- Aurora Borealis -->
+      <div class="album-card">
+        <a data-flickr-embed="true" data-footer="false" data-header="false"
+           href="https://www.flickr.com/photos/192044761@N05/albums/72177720322573420"
+           title="Aurora Borealis">
+          <img src="https://live.staticflickr.com/65535/54920293751_05ee2cb61e.jpg"
+               class="album-embed" alt="Aurora Borealis">
+        </a>
+        <div class="album-info">
+          <h2>Aurora Borealis</h2>
+          <a href="https://www.flickr.com/photos/192044761@N05/albums/72177720322573420"
+             target="_blank" rel="noopener">Open album ↗</a>
+        </div>
+      </div>
+
+      <!-- Wings Over Houston 2022 -->
+      <div class="album-card">
+        <a data-flickr-embed="true" data-footer="false" data-header="false"
+           href="https://www.flickr.com/photos/192044761@N05/albums/72177720314594542"
+           title="Wings Over Houston 2022">
+          <img src="https://live.staticflickr.com/65535/53512254889_d4346367fd_h.jpg"
+               class="album-embed" alt="Wings Over Houston 2022">
+        </a>
+        <div class="album-info">
+          <h2>Wings Over Houston 2022</h2>
+          <a href="https://www.flickr.com/photos/192044761@N05/albums/72177720314594542"
+             target="_blank" rel="noopener">Open album ↗</a>
+        </div>
+      </div>
+
+      <!-- PANC -->
+      <div class="album-card">
+        <a data-flickr-embed="true" data-footer="false" data-header="false"
+           href="https://www.flickr.com/photos/192044761@N05/albums/72177720314549906"
+           title="PANC">
+          <img src="https://live.staticflickr.com/65535/53507897245_ae133850ab_h.jpg"
+               class="album-embed" alt="PANC">
+        </a>
+        <div class="album-info">
+          <h2>PANC</h2>
+          <a href="https://www.flickr.com/photos/192044761@N05/albums/72177720314549906"
+             target="_blank" rel="noopener">Open album ↗</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    Photos by <a href="https://www.flickr.com/photos/192044761@N05/" target="_blank" rel="noopener">Steven Selby</a>
+    &nbsp;·&nbsp; Hosted on GitHub Pages
+  </footer>
+
+  <script async src="https://embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 
 </body>
 </html>
