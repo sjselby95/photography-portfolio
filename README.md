@@ -1,19 +1,30 @@
-# Personal Portfolio
+# Photography Portfolio
 
-My personal portfolio website, documenting my transition from
-commercial truck driving into IT and cybersecurity.
+A personal photography showcase site built with plain HTML/CSS, hosted on GitHub Pages.
 
-## What's here
+Live site: [sjselby95.github.io/photography-portfolio](https://sjselby95.github.io/photography-portfolio)
 
-A simple, hand-built site showcasing my certifications, projects,
-and hands-on security labs. Built with plain HTML and CSS as a
-learning exercise, and grown incrementally over time.
+## About
 
-## Live site
+Features albums from my [Flickr profile](https://www.flickr.com/photos/192044761@N05/), including:
 
-https://sjselby95.github.io
+- Plane Spotting
+- April 8th 2024 Total Solar Eclipse
+- Aurora Borealis
+- Wings Over Houston 2022
+- PANC
 
-## Built with
+Albums are embedded directly via Flickr's embed widget — clicking into any slideshow opens the full album on Flickr.
 
-- HTML
-- CSS
+## Structure
+
+```
+index.html   # Single-page site, no build step required
+```
+
+## Updating
+
+To add or remove albums, edit the `.album-card` blocks in `index.html`. Each card needs:
+
+1. A Flickr album URL
+2. A cover image URL from `live.staticflickr.com`
